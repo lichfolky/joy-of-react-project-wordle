@@ -1,11 +1,19 @@
 import React from 'react';
 
-function Game({ guesses }) {
+function GuessResults({ guesses }) {
     return (
         <div className="guess-results">{
-            guesses.map((guess, index) => <p className="guess" key={index} >{guess}</p>)
+            guesses.map((guess, index) => {
+                return (
+                    <p className="guess" key={index}>
+                        {[...guess].map((letter, index) => {
+                            return (<span className="cell" key={index}>{letter}</span>);
+                        })}
+                    </p>
+                );
+            })
         }
         </div>);
 }
 
-export default Game;
+export default GuessResults;
