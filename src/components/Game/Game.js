@@ -13,7 +13,7 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
-  const [guesses, setGuesses] = useState(range(0, NUM_OF_GUESSES_ALLOWED).map(el => "     "));
+  const [guesses, setGuesses] = useState(range(0, NUM_OF_GUESSES_ALLOWED).map(() => ""));
   const [guessesNum, setGuessesNum] = useState(0);
 
   function handleSubmitedGuess(guess) {
@@ -24,7 +24,7 @@ function Game() {
   }
 
   return <>
-    <GuessResults guesses={guesses} />
+    <GuessResults guesses={guesses} answer={answer} />
     <GuessInput handleSubmitedGuess={handleSubmitedGuess} />
   </>;
 }

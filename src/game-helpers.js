@@ -8,6 +8,16 @@ export function checkGuess(guess, answer) {
   // dealt with this character (it's correct, or misplaced).
   const SOLVED_CHAR = '✓';
 
+  if (guess == "") {
+    return [
+      { letter: undefined, status: undefined },
+      { letter: undefined, status: undefined },
+      { letter: undefined, status: undefined },
+      { letter: undefined, status: undefined },
+      { letter: undefined, status: undefined },
+    ];
+  }
+
   if (!guess) {
     return null;
   }
